@@ -11,17 +11,15 @@ interface IInsertSettngs {
     formatStr: string;
     start: number;
     step: number;
+    isChineseNumFormOne: boolean;
 }
 
-/**
- * InsertSettngs
- */
 export class InsertSettngs implements IInsertSettngs {
 
     public formatStr: string;
     public start: number;
     public step: number;
-
+    public isChineseNumFormOne: boolean;
     private _disposable: vscode.Disposable;
 
     constructor() {
@@ -53,6 +51,11 @@ export class InsertSettngs implements IInsertSettngs {
         this.step = settings.get<number>("step");
         if (!this.step) {
             this.step = 1;
+        }
+
+        this.isChineseNumFormOne = settings.get<boolean>("isChineseNumFormOne");
+        if (!this.isChineseNumFormOne) {
+            this.isChineseNumFormOne = false;
         }
 
     }
@@ -133,7 +136,8 @@ export class NumInserter {
         let retSettings: IInsertSettngs = {
             formatStr: ":d",
             start: 0,
-            step: 1
+            step: 1,
+            isChineseNumFormOne: false
         };
 
         //A simple check. :)
@@ -150,9 +154,8 @@ export class NumInserter {
             retSettings.formatStr = ':' + paramList[1];
             const strStart = paramList[2] || '0';
             const strStep = paramList[3] || '1';
-            if (/(?:wk)|(?:cn)/i.test(retSettings.formatStr)) {
+            if (/(?:wkcn)|(?:cn)/i.test(retSettings.formatStr) && retSettings.isChineseNumFormOne) {
                 retSettings.start = 1
-                retSettings.step = 1
             } else {
                 if (strStart.includes(".")) {
                     retSettings.start = parseFloat(strStart);
@@ -179,8 +182,8 @@ export class NumInserter {
 
 
         const opt: vscode.InputBoxOptions = {
-            placeHolder: "default: :d:0:1",
-            prompt: "Input format or format:start:step"
+            placeHolder: "(default) :d:0:1",
+            prompt: "Input :format or :format:start:step"
         }
         const input = vscode.window.showInputBox(opt);
 
