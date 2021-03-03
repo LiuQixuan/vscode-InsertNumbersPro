@@ -1,0 +1,57 @@
+{
+    "name": "insertnumspro",
+    "displayName": "Insert Numbers Pro",
+    "description": "Insert formated numbers in any where.suport chinese numerals and special format. 随心所欲插入中文数字或格式化的阿拉伯数字的插件",
+    "version": "0.0.1",
+    "publisher": "LiuQixuan",
+    "license": "MIT",
+    "icon": "asset/icon/icon.ico",
+    "homepage": "https://github.com/LiuQixuan/vscode-InsertNumbersPro",
+    "galleryBanner": {
+        "color": "#0000FF",
+        "theme": "dark"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LiuQixuan/vscode-InsertNumbersPro.git"
+    },
+    "bugs": {
+        "url": "https://github.com/LiuQixuan/vscode-InsertNumbersPro/issues",
+        "email": "liuqixuan@hotmail.com"
+    },
+    "categories": [
+        "Other"
+    ],
+    "engines": {
+        "vscode": "^1.52.1"
+    },
+    "activationEvents": [
+        "onCommand:extension.insertNums"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.insertNums",
+                "title": "Insert Numbers"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.insertNums",
+                "key": "ctrl+alt+n",
+                "mac": "cmd+alt+n",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^4.1.5",
+        "vscode": "^1.1.0"
+    }
+}
