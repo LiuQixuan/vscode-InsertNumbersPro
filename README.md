@@ -40,14 +40,14 @@ insertnumbers.isChineseNumFormOne = false,
 
 ### 动图演示
 
-默认插入
-![默认插入]()
-格式化插入数字序列
-![格式化插入数字序列]()
-插入中文数字
-![插入中文数字]()
-插入星期
-![插入星期]()
+> **默认插入**
+![默认插入](https://github.com/LiuQixuan/vscode-InsertNumbersPro/blob/master/asset/png/usage1.gif?raw=true)
+**格式化插入数字序列**
+![格式化插入数字序列](https://github.com/LiuQixuan/vscode-InsertNumbersPro/blob/master/asset/png/usage2.gif?raw=true)
+**插入中文数字**
+![插入中文数字](https://github.com/LiuQixuan/vscode-InsertNumbersPro/blob/master/asset/png/usage3.gif?raw=true)
+**插入星期**
+![插入星期](https://github.com/LiuQixuan/vscode-InsertNumbersPro/blob/master/asset/png/usage4.gif?raw=true)
 
 ## 参数
 
