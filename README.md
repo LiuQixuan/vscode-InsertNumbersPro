@@ -35,7 +35,7 @@ insertnumbers.isChineseNumFormOne = false,
 ### 使用
 使用鼠标中键或按住alt键加选多列或使用快捷键ctrl+d选择多列<br>
 按下f1 键入insert numbers 或使用快捷键ctrl+alt+n调用本插件<br>
-按照提示键入参数(默认为```:d:1:0```,即整数起始为1步长为1)<br>
+按照提示键入参数(默认为```:d:1:1```,即整数起始为1步长为1)<br>
 按下回车插入序列<br>
 
 ### 动图演示
